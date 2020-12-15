@@ -1,1 +1,0 @@
-export declare function useStableClone<TItem, TClone extends TItem>(items: TItem[], compare: (a: TItem, b: TItem & Partial<Omit<TClone, keyof TItem>>) => boolean): (TItem & Partial<Omit<TClone, keyof TItem>>)[];
