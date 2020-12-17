@@ -5,6 +5,7 @@ body {
 body text {
   fill: #222222;
 }
+
 .c-uploader {
   font-family: sans-serif;
   text-align: center;
@@ -16,6 +17,10 @@ body text {
 }
 .c-uploader.drop-ready {
   background-color: #f2cc8f;
+}
+
+.c-icon {
+  stroke: #3d405b;
 }
 
 .c-svg-canvas {
@@ -70,10 +75,6 @@ ul.hidden-nodes {
   fill: transparent;
 }
 .c-domain-object .controls .control-wheel .c-icon {
-  stroke: #3d405b;
-}
-
-.c-icon {
   stroke: #3d405b;
 }
 
