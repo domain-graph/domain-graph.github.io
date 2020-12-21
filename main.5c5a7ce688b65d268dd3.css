@@ -201,6 +201,18 @@ ul.hidden-nodes {
 .c-uploader.drop-ready {
   background-color: #f2cc8f;
 }
+.c-uploader ul.errors {
+  margin: 0;
+  padding: 32px 0 0 0 ;
+}
+.c-uploader ul.errors li {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+}
+.c-uploader ul.errors li .c-icon {
+  margin-right: 8px;
+}
 
 .c-button {
   cursor: pointer;
