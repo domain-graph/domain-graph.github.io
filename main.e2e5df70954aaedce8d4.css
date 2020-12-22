@@ -170,23 +170,44 @@ ul.hidden-nodes {
   bottom: 0;
   width: 400px;
 }
+.c-spotlight .controls {
+  top: 4px;
+  right: 16px;
+  position: absolute;
+}
 .c-spotlight .node-spotlight {
+  position: relative;
   border: 2px solid #3d405b;
   background-color: #81b29a;
   margin: 10px;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 16px 20px;
 }
 .c-spotlight .edge-spotlight {
   border: 2px solid #3d405b;
   background-color: #f4f1de;
   border-radius: 5px;
   padding: 10px 20px;
-  margin: 10px 30px;
+  margin: 16px 30px;
 }
 .c-spotlight h1 {
   text-align: center;
   font-size: 18px;
+}
+
+.c-icon-button {
+  display: inline-flex;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 8px 8px;
+}
+.c-icon-button:active {
+  background-color: #f2cc8f;
+}
+.c-icon-button:focus {
+  outline: none;
 }
 
 .c-uploader {
