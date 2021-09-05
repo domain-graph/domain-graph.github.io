@@ -52,6 +52,7 @@ ul.hidden-nodes {
   stroke-width: 2;
 }
 .c-domain-object.selected .handle circle {
+  fill: #81b29a;
   stroke: #e07a5f;
   stroke-width: 4;
 }
@@ -63,15 +64,16 @@ ul.hidden-nodes {
   stroke: none;
   text-anchor: middle;
   alignment-baseline: middle;
+  fill: #222222;
+}
+.c-domain-object.selected text {
+  fill: #222222;
 }
 .c-domain-object .controls rect.click-target {
   fill: transparent;
 }
 .c-domain-object .controls .control-wheel {
   fill: transparent;
-}
-.c-domain-object .controls .control-wheel .c-icon {
-  stroke: #3d405b;
 }
 
 .c-icon {
@@ -83,13 +85,25 @@ ul.hidden-nodes {
   stroke: #3d405b;
   stroke-width: 2;
 }
+.c-svg-button .c-icon {
+  stroke: #3d405b;
+}
+.c-svg-button:hover circle.background {
+  fill: #f2cc8f;
+  stroke: #3d405b;
+}
+.c-svg-button:hover .c-icon {
+  stroke: #3d405b;
+}
 .c-svg-button .click-target {
   cursor: pointer;
   fill: transparent;
 }
 
-.c-domain-edge .handle rect {
+.c-domain-edge .handle {
   cursor: pointer;
+}
+.c-domain-edge .handle rect {
   rx: 3;
   fill: #f4f1de;
   stroke: #3d405b;
@@ -97,9 +111,16 @@ ul.hidden-nodes {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+.c-domain-edge .handle .c-icon {
+  stroke: #3d405b;
+}
 .c-domain-edge .handle.selected rect {
+  fill: #f4f1de;
   stroke: #e07a5f;
   stroke-width: 4;
+}
+.c-domain-edge .handle.selected .c-icon {
+  stroke: #3d405b;
 }
 .c-domain-edge path {
   stroke: #3d405b;
@@ -156,7 +177,8 @@ ul.hidden-nodes {
   padding: 4px 8px;
   outline: none;
 }
-.c-node-picker button:focus {
+.c-node-picker button:focus,
+.c-node-picker button:hover {
   background-color: #f2cc8f;
 }
 
@@ -170,25 +192,97 @@ ul.hidden-nodes {
   bottom: 0;
   width: 400px;
 }
+.c-spotlight li {
+  list-style-type: none;
+}
+.c-spotlight ul {
+  padding: 0;
+}
+.c-spotlight .description,
+.c-spotlight .notice {
+  font-size: 90%;
+  opacity: 90%;
+}
 .c-spotlight .controls {
-  top: 4px;
-  right: 16px;
   position: absolute;
+}
+.c-spotlight .controls .c-icon-button:hover {
+  background-color: #f2cc8f;
+  stroke: #3d405b;
 }
 .c-spotlight .node-spotlight {
   position: relative;
   border: 2px solid #3d405b;
   background-color: #81b29a;
+  color: #222222;
   margin: 10px;
   border-radius: 30px;
   padding: 16px 20px;
 }
+.c-spotlight .node-spotlight li.edge.field {
+  padding: 6px 8px 6px 8px;
+  margin: -2px -8px -2px -8px;
+}
+.c-spotlight .node-spotlight li.edge.field.selected {
+  border-left: 4px solid #e07a5f;
+}
+.c-spotlight .node-spotlight li.edge.field:hover {
+  cursor: pointer;
+  background-color: #f2cc8f;
+}
+.c-spotlight .node-spotlight li.edge.field .description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.c-spotlight .node-spotlight .controls {
+  top: 4px;
+  right: 16px;
+}
+.c-spotlight .node-spotlight .controls .c-icon-button {
+  background-color: #81b29a;
+  stroke: #3d405b;
+}
 .c-spotlight .edge-spotlight {
+  position: relative;
   border: 2px solid #3d405b;
   background-color: #f4f1de;
+  color: #222222;
   border-radius: 5px;
   padding: 10px 20px;
   margin: 16px 30px;
+}
+.c-spotlight .edge-spotlight .controls {
+  top: 1px;
+  right: 1px;
+}
+.c-spotlight .edge-spotlight .controls .c-icon-button {
+  stroke: #3d405b;
+}
+.c-spotlight .enum-values,
+.c-spotlight .input-fields {
+  margin-top: 4px;
+  margin-left: 8px;
+}
+.c-spotlight .enum-values .deprecated .name,
+.c-spotlight .input-fields .deprecated .name,
+.c-spotlight .enum-values .deprecated .description,
+.c-spotlight .input-fields .deprecated .description {
+  text-decoration: line-through;
+}
+.c-spotlight .enum-values .deprecated .notice,
+.c-spotlight .input-fields .deprecated .notice {
+  padding: 0 8px 0 8px;
+  font-style: italic;
+}
+.c-spotlight .enum-values li.enum-value,
+.c-spotlight .input-fields li.enum-value,
+.c-spotlight .enum-values li.input-field,
+.c-spotlight .input-fields li.input-field {
+  margin-bottom: 4px;
+}
+.c-spotlight .field {
+  padding-bottom: 8px;
 }
 .c-spotlight h1 {
   text-align: center;
@@ -202,9 +296,6 @@ ul.hidden-nodes {
   border: none;
   background: none;
   padding: 8px 8px;
-}
-.c-icon-button:active {
-  background-color: #f2cc8f;
 }
 .c-icon-button:focus {
   outline: none;
@@ -224,7 +315,7 @@ ul.hidden-nodes {
 }
 .c-uploader ul.errors {
   margin: 0;
-  padding: 32px 0 0 0 ;
+  padding: 32px 0 0 0;
 }
 .c-uploader ul.errors li {
   list-style: none;
@@ -247,7 +338,8 @@ ul.hidden-nodes {
   background-color: #f4f1de;
   font-size: 16px;
 }
-.c-button:focus {
+.c-button:focus,
+.c-button:hover {
   outline: none;
   background-color: #f2cc8f;
 }
