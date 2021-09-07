@@ -5,6 +5,9 @@ body {
 body text {
   fill: #222222;
 }
+.c-toolbar {
+  top: 8px !important;
+}
 
 .c-uploader {
   font-family: sans-serif;
@@ -135,62 +138,20 @@ ul.hidden-nodes {
   stroke-width: 4;
 }
 
-.c-node-picker {
-  overflow: hidden;
-  display: inline-block;
-  position: absolute;
-  width: 300px;
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0);
-  border-radius: 20px;
-  padding: 16px;
-  top: 20px;
-  left: 20px;
-  font-family: sans-serif;
-}
-.c-node-picker ul,
-.c-node-picker li {
-  margin: 0;
-  padding: 0;
-}
-.c-node-picker li {
-  list-style: none;
-}
-.c-node-picker ul {
-  max-height: 600px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-.c-node-picker ul::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari and Opera */
-}
-.c-node-picker button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px 8px;
-  outline: none;
-}
-.c-node-picker button:focus,
-.c-node-picker button:hover {
-  background-color: #f2cc8f;
-}
-
 .c-spotlight {
-  font-family: sans-serif;
   overflow: scroll;
-  background-color: transparent;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  display: block;
   position: absolute;
+  max-height: 100vh;
+  width: 400px;
   top: 0;
   right: 0;
-  bottom: 0;
-  width: 400px;
+  font-family: sans-serif;
+}
+.c-spotlight::-webkit-scrollbar {
+  width: 0 !important;
 }
 .c-spotlight li {
   list-style-type: none;
@@ -222,6 +183,7 @@ ul.hidden-nodes {
 .c-spotlight .node-spotlight li.edge.field {
   padding: 6px 8px 6px 8px;
   margin: -2px -8px -2px -8px;
+  transition: background-color 100ms ease-in-out;
 }
 .c-spotlight .node-spotlight li.edge.field.selected {
   border-left: 4px solid #e07a5f;
@@ -299,6 +261,135 @@ ul.hidden-nodes {
 }
 .c-icon-button:focus {
   outline: none;
+}
+
+.c-toolbar {
+  display: inline-block;
+  position: relative;
+  top: 16px;
+  left: 395px;
+}
+.c-toolbar .c-pill-button {
+  margin: 0 6px;
+  background-color: #f4f1de;
+  color: #222222;
+}
+.c-toolbar .c-pill-button svg {
+  stroke: #222222;
+}
+.c-toolbar .c-pill-button:active {
+  background-color: #f2cc8f;
+  color: #222222;
+}
+.c-toolbar .c-pill-button:active svg {
+  stroke: #222222;
+}
+
+.c-pill-button {
+  display: inline-flex;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 8px 12px;
+  user-select: none;
+  border-radius: 40px;
+  align-items: center;
+  transition: box-shadow 100ms ease-in-out, background-color 100ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 0px;
+}
+.c-pill-button svg {
+  margin-top: -2px;
+  margin-right: 4px;
+}
+.c-pill-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
+}
+.c-pill-button:active {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 0px;
+}
+.c-pill-button:focus {
+  outline: none;
+}
+
+.c-search-box {
+  overflow: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  display: block;
+  position: absolute;
+  max-height: calc(100vh - 55px);
+  width: 400px;
+  top: 55px;
+  left: 0;
+  font-family: sans-serif;
+}
+.c-search-box::-webkit-scrollbar {
+  width: 0 !important;
+}
+.c-search-box div.controls {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+.c-search-box div.controls input {
+  width: 320px;
+  padding: 8px 40px 8px 12px;
+  margin: 0;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  transition: box-shadow 100ms ease-in-out;
+  background-color: white;
+  color: #222222;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 0px;
+}
+.c-search-box div.controls input::placeholder {
+  color: #888888;
+}
+.c-search-box div.controls input:focus {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
+}
+.c-search-box div.controls:focus input,
+.c-search-box div.controls:hover input {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
+}
+.c-search-box div.controls:active input {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 0px;
+}
+.c-search-box div.controls .c-icon-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.c-search-box div.controls .c-icon-button svg {
+  stroke: #222222;
+}
+.c-search-box .result {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+.c-search-box .result .description {
+  font-size: 90%;
+  opacity: 90%;
+}
+.c-search-box .result.node {
+  background-color: #81b29a;
+  border: 2px solid #3d405b;
+  border-radius: 12px;
+  margin: 8px 8px;
+}
+.c-search-box .result.field,
+.c-search-box .result.arg {
+  background-color: #f4f1de;
+  border: 2px solid #3d405b;
+  border-radius: 5px;
+  margin: 8px 12px;
+}
+.c-search-box ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .c-uploader {
