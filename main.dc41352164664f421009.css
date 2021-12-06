@@ -22,6 +22,10 @@ body text {
   background-color: #f2cc8f;
 }
 
+.c-icon {
+  stroke: #3d405b;
+}
+
 .c-svg-canvas {
   user-select: none;
   position: absolute;
@@ -77,10 +81,6 @@ ul.hidden-nodes {
 }
 .c-domain-object .controls .control-wheel {
   fill: transparent;
-}
-
-.c-icon {
-  stroke: #3d405b;
 }
 
 .c-svg-button circle.background {
